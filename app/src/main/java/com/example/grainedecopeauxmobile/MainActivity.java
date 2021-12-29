@@ -25,9 +25,9 @@ import java.sql.Statement;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String url = "jdbc:mysql://192.168.0.192:3306/myDB";
-    private static final String user = "hitesh";
-    private static final String pass = "1234";
+    private static final String url = "jdbc:mysql://clgu6252.odns.fr:3306/clgu6252_wp571";
+    private static final String user = "clgu6252_groupe_2";
+    private static final String pass = ")$OYuZSjUo8R";
     Button btnFetch,btnClear;
     TextView txtData;
     private ActivityMainBinding binding;
@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
 
                 String result = "Database Connection Successful\n";
                 Statement st = con.createStatement();
-                ResultSet rs = st.executeQuery("display_name FROM wpww_users");
+                ResultSet rs = st.executeQuery("SELECT display_name FROM wpww_users WHERE ID=171");
                 ResultSetMetaData rsmd = rs.getMetaData();
 
                 while (rs.next()) {
