@@ -44,12 +44,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
+            android:background="@color/white"
             android:padding="5dp"
             android:text="@string/graine_de_copeaux"
             android:textColor="@color/black"
             android:textSize="20sp"
-            android:textStyle="bold"
-            android:background="@color/white"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/txtData"
@@ -57,6 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="2dp"
             android:text="@string/your_data_will_be_displayed_here"
+            android:textColor="#A1887F"
             android:textStyle="bold" />
 
         <Button
@@ -80,6 +81,17 @@
             android:minWidth="250dp"
             android:text="@string/clear"
             android:textColor="#263238" />
+
+        <TextView
+            android:id="@+id/textWelcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="0dp"
+            android:text="@string/textwelcome"
+            android:textColor="#D81B60"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </LinearLayout>
 

@@ -7,4 +7,5 @@
     <string name="your_data_will_be_displayed_here">Your Data will be Displayed here</string>
     <string name="fetch_data">Fetch Data</string>
     <string name="clear">Clear</string>
+    <string name="textwelcome">Bienvenue, </string>
 </resources>
