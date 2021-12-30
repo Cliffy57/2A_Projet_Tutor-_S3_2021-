@@ -1,4 +1,4 @@
-package com.example.grainedecopeauxmobile.ui.notifications;
+package com.example.grainedecopeauxmobile.ui.profil;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,24 +12,23 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.grainedecopeauxmobile.R;
-import com.example.grainedecopeauxmobile.databinding.FragmentNotificationsBinding;
+import com.example.grainedecopeauxmobile.databinding.FragmentProfilBinding;
 
-public class NotificationsFragment extends Fragment {
+public class ProfilFragment extends Fragment {
 
-    private NotificationsViewModel notificationsViewModel;
-    private FragmentNotificationsBinding binding;
+    private NotificationsViewModel profilViewModel;
+    private FragmentProfilBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        notificationsViewModel =
+        profilViewModel =
                 new ViewModelProvider(this).get(NotificationsViewModel.class);
 
-        binding = FragmentNotificationsBinding.inflate(inflater, container, false);
+        binding = FragmentProfilBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textNotifications;
-        notificationsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        final TextView textView = binding.textProfil;
+        profilViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
