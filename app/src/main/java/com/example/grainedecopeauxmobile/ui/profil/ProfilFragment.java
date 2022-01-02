@@ -28,12 +28,7 @@ public class ProfilFragment extends Fragment {
         View root = binding.getRoot();
 
         final TextView textView = binding.textProfil;
-        profilViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+        profilViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 
