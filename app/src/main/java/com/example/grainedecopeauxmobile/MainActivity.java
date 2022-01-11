@@ -1,6 +1,9 @@
 package com.example.grainedecopeauxmobile;
 
 import android.app.Dialog;
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
@@ -90,6 +93,25 @@ public class MainActivity extends AppCompatActivity {
         dialog.show();
 
     }
+
+
+    public void onClickCours(View view) {
+        //Fragment fragment=new Fragment();
+
+
+        //FragmentManager fragmentManager= fragment.getActivity().getFragmentManager();
+        //FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
+        //fragmentTransaction.replace(R.id.fragment_cours,fragment);
+        //fragmentTransaction.addToBackStack(null);
+        //fragmentTransaction.commit();
+
+        NavController navController = Navigation.findNavController(this,R.id.fragment_dashboard);
+        navController.navigate(R.id.fragment_cours);
+    }
+
+
+
+
 
 
     private class ConnectMySql extends AsyncTask<String, Void, String> {
