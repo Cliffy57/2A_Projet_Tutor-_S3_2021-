@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="350dp"
+    android:layout_height="450dp"
+    android:layout_gravity="center"
+    android:background="@drawable/popup_login"
+    android:padding="5dp"
+    >
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/btn_close"
+        android:background="@drawable/ic_close"
+        />
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:id="@+id/image"
+        android:background="@drawable/logo_g2c"
+        />
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/image"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:id="@+id/txt_username"
+        android:hint="Nom d'Utilisateur"
+        android:background="#bdc3c7"
+        android:drawableLeft="@drawable/ic_username"
+        />
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_password"
+        android:layout_below="@+id/txt_username"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:background="#bdc3c7"
+        android:hint="Mot de Passe"
+        android:drawableLeft="@drawable/ic_password"
+        />
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/txt_password"
+        android:clickable="true"
+        android:id="@+id/btn_login"
+        android:text="Connexion"
+        android:textSize="20dp"
+        android:textColor="#ffff"
+        android:background="@drawable/btn_connexion"
+        />
+</RelativeLayout>

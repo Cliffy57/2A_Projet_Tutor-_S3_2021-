@@ -1,9 +1,14 @@
 package com.example.grainedecopeauxmobile;
 
+import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
     Button btnFetch,btnClear;
     TextView txtData;
     private ActivityMainBinding binding;
+
+    Dialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +73,22 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
+    }
+    ImageView imageView;
+    public void OnclickLogin(View view){
+        Dialog dialog=new Dialog(this);
+        dialog.setContentView(R.layout.fragment_login);
+
+        imageView=(ImageView)dialog.findViewById(R.id.btn_close);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.show();
+
     }
 
 
