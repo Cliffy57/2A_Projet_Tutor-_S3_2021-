@@ -1,9 +1,6 @@
 package com.example.grainedecopeauxmobile;
 
 import android.app.Dialog;
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
@@ -15,9 +12,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
+import com.example.grainedecopeauxmobile.ui.dashboard.DashboardFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -29,6 +33,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.Statement;
+import java.util.Objects;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -66,7 +71,8 @@ public class MainActivity extends AppCompatActivity {
 //                txtData.setText("");
 //            }
 //        });
-        
+
+
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
@@ -96,20 +102,26 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void onClickCours(View view) {
-        //Fragment fragment=new Fragment();
+        ConstraintLayout current_fragment=findViewById(R.id.fragment_dashboard);
+//        current_fragment.setVisibility(View.GONE);
+        current_fragment.removeAllViews();
+        Fragment fragment=new Fragment(R.layout.fragment_cours);
+        FragmentManager fragmentManager= this.getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_dashboard,fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
 
 
-        //FragmentManager fragmentManager= fragment.getActivity().getFragmentManager();
-        //FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
-        //fragmentTransaction.replace(R.id.fragment_cours,fragment);
-        //fragmentTransaction.addToBackStack(null);
-        //fragmentTransaction.commit();
 
-        NavController navController = Navigation.findNavController(this,R.id.fragment_dashboard);
-        navController.navigate(R.id.fragment_cours);
+
+
+        //        NavController navController = Navigation.findNavController(this,R.id.fragment_cours);
+        //        navController.navigate(R.id.fragment_dashboard);
+
+//        FragmentTransaction transaction= getSupportFragmentManager().beginTransaction();
+//       transaction.replace(R.id.fragment_dashboard,new fragmentCours()).commit();
     }
-
-
 
 
 
