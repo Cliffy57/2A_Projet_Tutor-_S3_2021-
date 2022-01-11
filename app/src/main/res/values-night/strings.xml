@@ -9,4 +9,5 @@
     <string name="txt_home_g2c">Graine de copeaux</string>
     <string name="logo_home_g2c">logoG2C</string>
     <string name="text_home_description">Apprendre la menuiserie en s\'amusant !</string>
+    <string name="btn_login">Connexion</string>
 </resources>
