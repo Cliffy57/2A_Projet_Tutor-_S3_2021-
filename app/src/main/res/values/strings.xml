@@ -9,4 +9,7 @@
     <string name="clear">Clear</string>
     <string name="textwelcome">Bienvenue, </string>
     <string name="title_login">Login</string>
+    <string name="txt_home_g2c">Graine de copeaux</string>
+    <string name="logo_home_g2c">logoG2C</string>
+    <string name="text_home_description">Apprendre la menuiserie en s\'amusant !</string>
 </resources>

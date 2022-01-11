@@ -38,24 +38,24 @@ public class MainActivity extends AppCompatActivity {
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        txtData = (TextView) this.findViewById(R.id.txtData);
-        btnFetch = (Button) findViewById(R.id.btnFetch);
-        btnClear = (Button) findViewById(R.id.btnClear);
-        btnFetch.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                // TODO Auto-generated method stub
-                ConnectMySql connectMySql = new ConnectMySql();
-                connectMySql.execute("");
-            }
-        });
-        btnClear.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtData.setText("");
-            }
-        });
+//        txtData = (TextView) this.findViewById(R.id.txtData);
+//        btnFetch = (Button) findViewById(R.id.btnFetch);
+//        btnClear = (Button) findViewById(R.id.btnClear);
+//        btnFetch.setOnClickListener(new View.OnClickListener() {
+//
+//            @Override
+//            public void onClick(View v) {
+//                // TODO Auto-generated method stub
+//                ConnectMySql connectMySql = new ConnectMySql();
+//                connectMySql.execute("");
+//            }
+//        });
+//        btnClear.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                txtData.setText("");
+//            }
+//        });
         
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
