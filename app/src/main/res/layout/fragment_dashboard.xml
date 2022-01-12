@@ -4,7 +4,51 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/fragment_dashboard"
     tools:context=".ui.dashboard.DashboardFragment">
+
+    <Button
+        android:id="@+id/button_qcm"
+        android:layout_width="300dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="32dp"
+        android:checkable="false"
+        android:fontFamily="@font/poppins_medium"
+        android:text="QCM"
+        android:textAlignment="center"
+        android:textColor="#455A64"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_cours"
+        android:layout_width="300dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="196dp"
+        android:checkable="true"
+        android:fontFamily="@font/poppins_medium"
+        android:onClick="onClickCours"
+        android:text="COURS"
+        android:textColor="#455A64"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_contact"
+        android:layout_width="300dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="372dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="CONTACT"
+        android:textColor="#455A64"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/text_dashboard"
@@ -17,6 +61,9 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.542" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

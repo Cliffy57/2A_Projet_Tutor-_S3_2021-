@@ -1,15 +1,27 @@
 package com.example.grainedecopeauxmobile;
 
+import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
+import com.example.grainedecopeauxmobile.ui.dashboard.DashboardFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -21,6 +33,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.Statement;
+import java.util.Objects;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -32,41 +45,85 @@ public class MainActivity extends AppCompatActivity {
     TextView txtData;
     private ActivityMainBinding binding;
 
+    Dialog dialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        txtData = (TextView) this.findViewById(R.id.txtData);
-        btnFetch = (Button) findViewById(R.id.btnFetch);
-        btnClear = (Button) findViewById(R.id.btnClear);
-        btnFetch.setOnClickListener(new View.OnClickListener() {
+//        txtData = (TextView) this.findViewById(R.id.txtData);
+//        btnFetch = (Button) findViewById(R.id.btnFetch);
+//        btnClear = (Button) findViewById(R.id.btnClear);
+//        btnFetch.setOnClickListener(new View.OnClickListener() {
+//
+//            @Override
+//            public void onClick(View v) {
+//                // TODO Auto-generated method stub
+//                ConnectMySql connectMySql = new ConnectMySql();
+//                connectMySql.execute("");
+//            }
+//        });
+//        btnClear.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                txtData.setText("");
+//            }
+//        });
 
-            @Override
-            public void onClick(View v) {
-                // TODO Auto-generated method stub
-                ConnectMySql connectMySql = new ConnectMySql();
-                connectMySql.execute("");
-            }
-        });
-        btnClear.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtData.setText("");
-            }
-        });
-        
+
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications)
+                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_profil)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
     }
+    ImageView imageView;
+    public void OnclickLogin(View view){
+        Dialog dialog=new Dialog(this);
+        dialog.setContentView(R.layout.fragment_login);
+
+        imageView=(ImageView)dialog.findViewById(R.id.btn_close);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.show();
+
+    }
+
+
+    public void onClickCours(View view) {
+        ConstraintLayout current_fragment=findViewById(R.id.fragment_dashboard);
+//        current_fragment.setVisibility(View.GONE);
+        current_fragment.removeAllViews();
+        Fragment fragment=new Fragment(R.layout.fragment_cours);
+        FragmentManager fragmentManager= this.getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_dashboard,fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+
+
+
+
+
+        //        NavController navController = Navigation.findNavController(this,R.id.fragment_cours);
+        //        navController.navigate(R.id.fragment_dashboard);
+
+//        FragmentTransaction transaction= getSupportFragmentManager().beginTransaction();
+//       transaction.replace(R.id.fragment_dashboard,new fragmentCours()).commit();
+    }
+
+
 
 
     private class ConnectMySql extends AsyncTask<String, Void, String> {
