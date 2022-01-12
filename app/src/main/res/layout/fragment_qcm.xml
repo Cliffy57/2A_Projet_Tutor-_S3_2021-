@@ -29,7 +29,8 @@
                 android:layout_height="match_parent"
                 android:layout_margin="3dp"
                 android:layout_weight="0.5"
-                android:text="QCM1" />
+                android:text="QCM1"
+                android:onClick="onClickQCMTest"/>
 
             <Button
                 android:id="@+id/button"

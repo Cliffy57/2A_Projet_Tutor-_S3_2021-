@@ -5,21 +5,19 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
 
-import com.example.grainedecopeauxmobile.ui.dashboard.DashboardFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
@@ -33,7 +31,6 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.Statement;
-import java.util.Objects;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -135,6 +132,29 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.commit();
     }
 
+    public void onClickQCMTest(View view) {
+        ConstraintLayout current_fragment = findViewById(R.id.fragment_qcm);
+//      current_fragment.setVisibility(View.GONE);
+        current_fragment.removeAllViews();
+        Fragment fragment = new Fragment(R.layout.fragment_qcm_exemple);
+        FragmentManager fragmentManager = this.getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_qcm, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
+
+    public void onClickQCMReturn(View view) {
+        ConstraintLayout current_fragment = findViewById(R.id.fragment_qcm_ex);
+//      current_fragment.setVisibility(View.GONE);
+        current_fragment.removeAllViews();
+        Fragment fragment = new Fragment(R.layout.fragment_qcm);
+        FragmentManager fragmentManager = this.getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_qcm_ex, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
 
     private class ConnectMySql extends AsyncTask<String, Void, String> {
         String res = "";
