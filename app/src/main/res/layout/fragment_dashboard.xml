@@ -20,7 +20,8 @@
         android:textColor="#455A64"
         android:textSize="34sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:onClick="onClickQCM"/>
 
     <Button
         android:id="@+id/button_cours"

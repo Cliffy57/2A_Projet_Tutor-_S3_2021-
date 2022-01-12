@@ -123,7 +123,17 @@ public class MainActivity extends AppCompatActivity {
 //       transaction.replace(R.id.fragment_dashboard,new fragmentCours()).commit();
     }
 
-
+    public void onClickQCM(View view) {
+        ConstraintLayout current_fragment = findViewById(R.id.fragment_dashboard);
+//      current_fragment.setVisibility(View.GONE);
+        current_fragment.removeAllViews();
+        Fragment fragment = new Fragment(R.layout.fragment_qcm);
+        FragmentManager fragmentManager = this.getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_dashboard, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
 
 
     private class ConnectMySql extends AsyncTask<String, Void, String> {
