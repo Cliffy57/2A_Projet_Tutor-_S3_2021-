@@ -1,8 +1,10 @@
 package com.example.grainedecopeauxmobile;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -118,6 +120,17 @@ public class MainActivity extends AppCompatActivity {
 
 //        FragmentTransaction transaction= getSupportFragmentManager().beginTransaction();
 //       transaction.replace(R.id.fragment_dashboard,new fragmentCours()).commit();
+    }
+    public void onClickShop(View view) {
+        Uri uri = Uri.parse("https://www.grainedecopeaux.com/boutique/"); // missing 'http://' will cause crashed
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(intent);
+    }
+    public void onClickYtb(View view) {
+        startActivity(new Intent(Intent.ACTION_VIEW,   Uri.parse("https://www.youtube.com/channel/UC_TVzMGljJUHlhLG0dpXqdg")));
+    }
+    public void onClickInstagram(View view) {
+        startActivity(new Intent(Intent.ACTION_VIEW,   Uri.parse("https://www.instagram.com/grainedecopeaux/?hl=fr")));
     }
 
     public void onClickQCM(View view) {
