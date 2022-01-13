@@ -45,6 +45,7 @@
         android:layout_marginStart="36dp"
         android:layout_marginTop="372dp"
         android:fontFamily="@font/poppins_medium"
+        android:onClick="onClickContact"
         android:text="CONTACT"
         android:textColor="#455A64"
         android:textSize="34sp"

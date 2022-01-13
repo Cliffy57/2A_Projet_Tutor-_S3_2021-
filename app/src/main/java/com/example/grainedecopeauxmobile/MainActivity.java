@@ -1,8 +1,10 @@
 package com.example.grainedecopeauxmobile;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -35,6 +37,7 @@ import java.sql.Statement;
 
 public class MainActivity extends AppCompatActivity {
 
+
     private static final String url = "jdbc:mysql://clgu6252.odns.fr:3306/clgu6252_wp571";
     private static final String user = "clgu6252_groupe_2";
     private static final String pass = ")$OYuZSjUo8R";
@@ -43,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
 
     Dialog dialog;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,6 +70,12 @@ public class MainActivity extends AppCompatActivity {
 //                txtData.setText("");
 //            }
 //        });
+
+
+
+
+
+
 
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
@@ -97,6 +105,29 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void onClickG2C(View view) {
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse("https://www.grainedecopeaux.com/"));
+        startActivity(intent);
+    }
+
+    public void onClickInstagramG2C(View view) {
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse("https://www.instagram.com/grainedecopeaux/?hl=fr"));
+        startActivity(intent);
+
+    }
+
+    public void onClickYoutubeG2C(View view) {
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse("https://www.youtube.com/channel/UC_TVzMGljJUHlhLG0dpXqdg"));
+        startActivity(intent);
+
+
+    }
 
     public void onClickCours(View view) {
         ConstraintLayout current_fragment=findViewById(R.id.fragment_dashboard);
@@ -155,6 +186,24 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
+
+
+    public void onClickContact(View view)
+    {
+        ConstraintLayout current_fragment = findViewById(R.id.fragment_dashboard);
+        //      current_fragment.setVisibility(View.GONE);
+        current_fragment.removeAllViews();
+        Fragment fragment = new Fragment(R.layout.fragment_contact);
+        FragmentManager fragmentManager = this.getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_dashboard, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+
+    }
+
+
+
 
     private class ConnectMySql extends AsyncTask<String, Void, String> {
         String res = "";
