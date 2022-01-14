@@ -9,6 +9,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -167,6 +168,21 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.replace(R.id.fragment_qcm_ex, fragment);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
+    }
+
+    private TextView txt_username;
+    private TextView txt_password;
+    private Button btn_login;
+    public void onClickConnexion(View view) {
+
+//        String inputUsername = txt_username.getText().toString();
+//        String inputPassword = txt_password.getText().toString();
+//        if(inputUsername.isEmpty() || inputPassword.isEmpty()){
+//            Toast.makeText(this,"Specifier les informations de connexions.",Toast.LENGTH_SHORT).show();
+        //}else{
+        //FAIRE CONNEXION
+        //}
+
     }
 
     private class ConnectMySql extends AsyncTask<String, Void, String> {
