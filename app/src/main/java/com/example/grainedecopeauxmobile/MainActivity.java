@@ -1,5 +1,6 @@
 package com.example.grainedecopeauxmobile;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
@@ -12,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -44,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
     Button btnFetch,btnClear;
     TextView txtData;
     private ActivityMainBinding binding;
-
     Dialog dialog;
 
     @Override
@@ -53,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+
 //        txtData = (TextView) this.findViewById(R.id.txtData);
 //        btnFetch = (Button) findViewById(R.id.btnFetch);
 //        btnClear = (Button) findViewById(R.id.btnClear);
@@ -122,6 +125,7 @@ public class MainActivity extends AppCompatActivity {
 //        FragmentTransaction transaction= getSupportFragmentManager().beginTransaction();
 //       transaction.replace(R.id.fragment_dashboard,new fragmentCours()).commit();
     }
+
     public void onClickShop(View view) {
         Uri uri = Uri.parse("https://www.grainedecopeaux.com/boutique/"); // missing 'http://' will cause crashed
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
@@ -156,6 +160,18 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.replace(R.id.fragment_qcm, fragment);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
+    }
+    public void onClickAssemblage(View view){
+        ConstraintLayout current_fragment=findViewById(R.id.fragment_cours);
+        current_fragment.setVisibility(View.GONE);
+        current_fragment.removeAllViews();
+        Fragment fragment=new Fragment(R.layout.fragment_cours_assemblage);
+        FragmentManager fragmentManager= this.getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_cours,fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+
     }
 
     public void onClickQCMReturn(View view) {
@@ -201,7 +217,7 @@ public class MainActivity extends AppCompatActivity {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection con = DriverManager.getConnection(url, user, pass);
-                System.out.println("Databaseection success");
+                System.out.println("Databasection success");
 
                 String result = "Database Connection Successful\n";
                 Statement st = con.createStatement();

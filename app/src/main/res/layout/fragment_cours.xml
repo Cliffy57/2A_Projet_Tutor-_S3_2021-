@@ -8,22 +8,51 @@
     android:layout_gravity="center"
     android:padding="5dp">
 
-    <TextView
-        android:id="@+id/textView"
+    <Button
+        android:id="@+id/button_assemblage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="INSANE MEC"
-        android:textSize="48sp"
-        tools:ignore="MissingConstraints" />
-
-    <pl.droidsonroids.gif.GifImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="209dp"
-        android:src="@drawable/patrick"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="224dp"
+        android:onClick="onClickAssemblage"
+        android:text="Assemblage"
+        android:textColor="#4E342E"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingClass,MissingConstraints" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_calepinage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="204dp"
+        android:layout_marginTop="228dp"
+        android:onClick="onClickCalepinage"
+        android:text="Calepinage"
+        android:textColor="#4E342E"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_dechets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="304dp"
+        android:onClick="onClickDechets"
+        android:text="Dechets"
+        android:textColor="#4E342E"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_recyclage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="308dp"
+        android:onClick="OnClickRecyclage"
+        android:text="Recyclage"
+        android:textColor="#4E342E"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
