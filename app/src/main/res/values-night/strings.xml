@@ -8,6 +8,9 @@
     <string name="title_login">Login</string>
     <string name="txt_home_g2c">Graine de copeaux</string>
     <string name="logo_home_g2c">logoG2C</string>
+    <string name ="logo_youtube_g2c">logoYoutubeG2C</string>
+    <string name ="logo_instagram_g2c">logoInstagramG2C</string>
+    <string name ="text_utilisateur">Visiteur</string>
     <string name="text_home_description">Apprendre la menuiserie en s\'amusant !</string>
     <string name="btn_login">Connexion</string>
 </resources>

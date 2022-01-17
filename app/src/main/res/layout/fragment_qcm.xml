@@ -38,7 +38,8 @@
                 android:layout_height="match_parent"
                 android:layout_margin="3dp"
                 android:layout_weight="0.5"
-                android:text="QCM2" />
+                android:text="QCM2"
+                android:onClick="onClickPDF"/>
 
         </TableRow>
 
