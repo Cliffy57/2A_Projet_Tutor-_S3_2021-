@@ -7,32 +7,80 @@
     android:id="@+id/fragment_dashboard"
     tools:context=".ui.dashboard.DashboardFragment">
 
+    <TextView
+        android:id="@+id/text_score"
+        android:layout_width="140dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Score"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.054" />
+
+    <Button
+        android:id="@+id/button_score_moins"
+        android:layout_width="100dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="153dp"
+        android:layout_marginTop="24dp"
+        android:checkable="true"
+        android:fontFamily="@font/poppins_medium"
+        android:onClick="onClickScoreMoins"
+        android:text="-"
+        android:textColor="#455A64"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_score_plus"
+        android:layout_width="100dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="24dp"
+        android:checkable="true"
+        android:fontFamily="@font/poppins_medium"
+        android:onClick="onClickScorePlus"
+        android:text="+"
+        android:textColor="#455A64"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/button_qcm"
         android:layout_width="300dp"
         android:layout_height="120dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="292dp"
         android:checkable="false"
         android:fontFamily="@font/poppins_medium"
-        android:text="QCM"
+        android:onClick="onClickQCM"
+        android:text="Jouez"
         android:textAlignment="center"
         android:textColor="#455A64"
         android:textSize="34sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:onClick="onClickQCM"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button_cours"
         android:layout_width="300dp"
         android:layout_height="120dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="196dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="160dp"
         android:checkable="true"
         android:fontFamily="@font/poppins_medium"
         android:onClick="onClickCours"
-        android:text="COURS"
+        android:text="Apprendre"
         android:textColor="#455A64"
         android:textSize="34sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,11 +90,10 @@
         android:id="@+id/button_contact"
         android:layout_width="300dp"
         android:layout_height="120dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="372dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="428dp"
         android:fontFamily="@font/poppins_medium"
-        android:onClick="onClickContact"
-        android:text="CONTACT"
+        android:text="Boutique"
         android:textColor="#455A64"
         android:textSize="34sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -66,6 +113,6 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.542" />
+        app:layout_constraintVertical_bias="0.691" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

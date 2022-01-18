@@ -10,13 +10,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
 
-import com.github.barteksc.pdfviewer.PDFView;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -29,6 +26,9 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.grainedecopeauxmobile.databinding.ActivityMainBinding;
+import com.example.grainedecopeauxmobile.ui.profil.ProfilFragment;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -43,10 +43,14 @@ public class MainActivity extends AppCompatActivity {
     private static final String user = "clgu6252_groupe_2";
     private static final String pass = ")$OYuZSjUo8R";
     Button btnFetch,btnClear;
+    ImageView imgView ;
     TextView txtData;
     private ActivityMainBinding binding;
-
+    //private int score = 0 ;
     Dialog dialog;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -89,25 +93,8 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
-       PDFView pdfView = findViewById(R.id.pdfView);
 
-        pdfView.fromAsset("Rapport PPP_CREMON_Damien.pdf")
-                .pages(0, 2, 1, 3, 3, 3) // all pages are displayed by default
-                .enableSwipe(true) // allows to block changing pages using swipe
-                .swipeHorizontal(false)
-                .enableDoubletap(true)
-                .enableAnnotationRendering(false) // render annotations (such as comments, colors or forms)
-                .password(null)
-                .scrollHandle(null)
-                .enableAntialiasing(true) // improve rendering a little bit on low-res screens
-                // spacing between pages in dp. To define spacing color, set view background
-                .spacing(0)
-                .autoSpacing(false) // add dynamic spacing to fit each page on its own on the screen
-                .fitEachPage(false) // fit each page to the view, else smaller pages are scaled relative to largest page.
-                .pageSnap(false) // snap pages to screen boundaries
-                .pageFling(false) // make a fling change only a single page like ViewPager
-                .nightMode(false) // toggle night mode*/
-                .load();
+
     }
     ImageView imageView;
     public void OnclickLogin(View view){
@@ -123,6 +110,7 @@ public class MainActivity extends AppCompatActivity {
         });
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.show();
+
 
     }
 
@@ -151,15 +139,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickCours(View view) {
-        ConstraintLayout current_fragment=findViewById(R.id.fragment_dashboard);
+        ConstraintLayout current_fragment = findViewById(R.id.fragment_dashboard);
 //        current_fragment.setVisibility(View.GONE);
         current_fragment.removeAllViews();
-        Fragment fragment=new Fragment(R.layout.fragment_cours);
-        FragmentManager fragmentManager= this.getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.fragment_dashboard,fragment);
+        Fragment fragment = new Fragment(R.layout.fragment_cours);
+        FragmentManager fragmentManager = this.getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_dashboard, fragment);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
+    }
 
 
 
@@ -170,6 +159,17 @@ public class MainActivity extends AppCompatActivity {
 
 //        FragmentTransaction transaction= getSupportFragmentManager().beginTransaction();
 //       transaction.replace(R.id.fragment_dashboard,new fragmentCours()).commit();
+
+    public void onClickShop(View view) {
+        Uri uri = Uri.parse("https://www.grainedecopeaux.com/boutique/"); // missing 'http://' will cause crashed
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(intent);
+    }
+    public void onClickYtb(View view) {
+        startActivity(new Intent(Intent.ACTION_VIEW,   Uri.parse("https://www.youtube.com/channel/UC_TVzMGljJUHlhLG0dpXqdg")));
+    }
+    public void onClickInstagram(View view) {
+        startActivity(new Intent(Intent.ACTION_VIEW,   Uri.parse("https://www.instagram.com/grainedecopeaux/?hl=fr")));
     }
 
     public void onClickQCM(View view) {
@@ -182,6 +182,7 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.replace(R.id.fragment_dashboard, fragment);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
+
     }
 
     public void onClickPDF(View view) {
@@ -206,6 +207,7 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.replace(R.id.fragment_qcm, fragment);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
+
     }
 
     public void onClickQCMReturn(View view) {
@@ -221,19 +223,34 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void onClickContact(View view)
+    public void onClickScorePlus(View view) {
+        ProfilFragment.score= ProfilFragment.score +100;
+    }
+
+    public void onClickScoreMoins(View view)
     {
-        ConstraintLayout current_fragment = findViewById(R.id.fragment_dashboard);
-        //      current_fragment.setVisibility(View.GONE);
-        current_fragment.removeAllViews();
-        Fragment fragment = new Fragment(R.layout.fragment_contact);
-        FragmentManager fragmentManager = this.getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.fragment_dashboard, fragment);
-        fragmentTransaction.addToBackStack(null);
-        fragmentTransaction.commit();
+        ProfilFragment.score = ProfilFragment.score -100;
+    }
+
+
+
+
+    private TextView txt_username;
+    private TextView txt_password;
+    private Button btn_login;
+    public void onClickConnexion(View view) {
+
+//        String inputUsername = txt_username.getText().toString();
+//        String inputPassword = txt_password.getText().toString();
+//        if(inputUsername.isEmpty() || inputPassword.isEmpty()){
+//            Toast.makeText(this,"Specifier les informations de connexions.",Toast.LENGTH_SHORT).show();
+        //}else{
+        //FAIRE CONNEXION
+        //}
+
 
     }
+
 
 
 
