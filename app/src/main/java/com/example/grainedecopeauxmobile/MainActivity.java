@@ -9,14 +9,9 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
-
-
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -29,6 +24,9 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.grainedecopeauxmobile.databinding.ActivityMainBinding;
+import com.example.grainedecopeauxmobile.ui.profil.ProfilFragment;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -42,10 +40,14 @@ public class MainActivity extends AppCompatActivity {
     private static final String user = "clgu6252_groupe_2";
     private static final String pass = ")$OYuZSjUo8R";
     Button btnFetch,btnClear;
+    ImageView imgView ;
     TextView txtData;
     private ActivityMainBinding binding;
-
+    //private int score = 0 ;
     Dialog dialog;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,6 +84,9 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
+
+
+
     }
     ImageView imageView;
     public void OnclickLogin(View view){
@@ -98,19 +103,21 @@ public class MainActivity extends AppCompatActivity {
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.show();
 
+
     }
 
 
     public void onClickCours(View view) {
-        ConstraintLayout current_fragment=findViewById(R.id.fragment_dashboard);
+        ConstraintLayout current_fragment = findViewById(R.id.fragment_dashboard);
 //        current_fragment.setVisibility(View.GONE);
         current_fragment.removeAllViews();
-        Fragment fragment=new Fragment(R.layout.fragment_cours);
-        FragmentManager fragmentManager= this.getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.fragment_dashboard,fragment);
+        Fragment fragment = new Fragment(R.layout.fragment_cours);
+        FragmentManager fragmentManager = this.getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_dashboard, fragment);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
+    }
 
 
 
@@ -121,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
 
 //        FragmentTransaction transaction= getSupportFragmentManager().beginTransaction();
 //       transaction.replace(R.id.fragment_dashboard,new fragmentCours()).commit();
-    }
+
     public void onClickShop(View view) {
         Uri uri = Uri.parse("https://www.grainedecopeaux.com/boutique/"); // missing 'http://' will cause crashed
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
@@ -144,6 +151,7 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.replace(R.id.fragment_dashboard, fragment);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
+
     }
 
     public void onClickQCMTest(View view) {
@@ -156,6 +164,7 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.replace(R.id.fragment_qcm, fragment);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
+
     }
 
     public void onClickQCMReturn(View view) {
@@ -169,6 +178,18 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
+
+    public void onClickScorePlus(View view) {
+        ProfilFragment.score= ProfilFragment.score +100;
+    }
+
+    public void onClickScoreMoins(View view)
+    {
+        ProfilFragment.score = ProfilFragment.score -100;
+    }
+
+
+
 
     private TextView txt_username;
     private TextView txt_password;
@@ -184,6 +205,12 @@ public class MainActivity extends AppCompatActivity {
         //}
 
     }
+
+
+
+
+
+
 
     private class ConnectMySql extends AsyncTask<String, Void, String> {
         String res = "";

@@ -13,4 +13,9 @@
     <string name="logo_home_g2c">logoG2C</string>
     <string name="text_home_description">Apprendre la menuiserie en s\'amusant !</string>
     <string name="btn_login">Connexion</string>
+    <string name="rang">Rang: </string>
+    <string name="badge">Badge acquis:</string>
+    <string name="img_rang">Rang</string>
+
+
 </resources>
