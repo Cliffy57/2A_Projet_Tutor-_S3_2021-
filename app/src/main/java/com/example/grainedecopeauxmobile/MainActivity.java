@@ -13,6 +13,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
@@ -36,6 +38,7 @@ import java.sql.Statement;
 
 public class MainActivity extends AppCompatActivity {
 
+
     private static final String url = "jdbc:mysql://clgu6252.odns.fr:3306/clgu6252_wp571";
     private static final String user = "clgu6252_groupe_2";
     private static final String pass = ")$OYuZSjUo8R";
@@ -48,13 +51,13 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
 //        txtData = (TextView) this.findViewById(R.id.txtData);
 //        btnFetch = (Button) findViewById(R.id.btnFetch);
 //        btnClear = (Button) findViewById(R.id.btnClear);
@@ -75,6 +78,12 @@ public class MainActivity extends AppCompatActivity {
 //        });
 
 
+
+
+
+
+
+
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
@@ -84,7 +93,6 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
-
 
 
     }
@@ -106,6 +114,29 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void onClickG2C(View view) {
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse("https://www.grainedecopeaux.com/"));
+        startActivity(intent);
+    }
+
+    public void onClickInstagramG2C(View view) {
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse("https://www.instagram.com/grainedecopeaux/?hl=fr"));
+        startActivity(intent);
+
+    }
+
+    public void onClickYoutubeG2C(View view) {
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse("https://www.youtube.com/channel/UC_TVzMGljJUHlhLG0dpXqdg"));
+        startActivity(intent);
+
+
+    }
 
     public void onClickCours(View view) {
         ConstraintLayout current_fragment = findViewById(R.id.fragment_dashboard);
@@ -154,6 +185,18 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void onClickPDF(View view) {
+        ConstraintLayout current_fragment = findViewById(R.id.fragment_qcm);
+//      current_fragment.setVisibility(View.GONE);
+        current_fragment.removeAllViews();
+        Fragment fragment = new Fragment(R.layout.fragment_pdf);
+        FragmentManager fragmentManager = this.getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_qcm, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
+
     public void onClickQCMTest(View view) {
         ConstraintLayout current_fragment = findViewById(R.id.fragment_qcm);
 //      current_fragment.setVisibility(View.GONE);
@@ -178,6 +221,7 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
+
 
     public void onClickScorePlus(View view) {
         ProfilFragment.score= ProfilFragment.score +100;
@@ -204,9 +248,8 @@ public class MainActivity extends AppCompatActivity {
         //FAIRE CONNEXION
         //}
 
+
     }
-
-
 
 
 
