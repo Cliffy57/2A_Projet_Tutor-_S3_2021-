@@ -21,6 +21,7 @@ public class ProfilFragment extends Fragment {
     private FragmentProfilBinding binding;
     private TextView textNomRang;
     private ImageView imageRang;
+    private TextView textNomBadge;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -38,6 +39,8 @@ public class ProfilFragment extends Fragment {
     {
         textNomRang= (TextView) getView().findViewById(R.id.textDescritpionRang);
         imageRang = (ImageView) getView().findViewById(R.id.img_rang);
+        textNomBadge = (TextView) getView().findViewById(R.id.textDescritpionBadge);
+        textNomBadge.setText("Aucun");
 
             if (score < 100) {
                 textNomRang.setText("Bleuisaille");
@@ -71,7 +74,8 @@ public class ProfilFragment extends Fragment {
                 imageRang.setImageResource(R.drawable.rank_mac_gyver);}
             else{
                 textNomRang.setText("Boss du game");
-                 imageRang.setImageResource(R.drawable.rank_boss_du_game);}
+                 imageRang.setImageResource(R.drawable.rank_boss_du_game);
+                textNomBadge.setText("Assiduité");}
     }
 
 
