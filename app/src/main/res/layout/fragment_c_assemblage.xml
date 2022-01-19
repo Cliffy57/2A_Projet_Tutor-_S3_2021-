@@ -5,54 +5,49 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/titre_assemblage"
+    <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="568dp"
-        android:fontFamily="@font/poppins_medium"
-        android:text="Cours - Assemblage"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:scrollbarStyle="outsideInset"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        tools:ignore="SpeakableTextPresentCheck">
 
-    <ImageView
-        android:id="@+id/assemblage1"
-        android:layout_width="356dp"
-        android:layout_height="187dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="61dp"
-        android:layout_marginBottom="355dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/assemblage1" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/assemblage2"
-        android:layout_width="357dp"
-        android:layout_height="175dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="255dp"
-        android:layout_marginBottom="173dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/assemblage2" />
+            <TextView
+                android:id="@+id/titre_assemblage"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Cours - Assemblage"
+                android:textAlignment="center"
+                android:textSize="24sp" />
 
-    <ImageView
-        android:id="@+id/assemblage3"
-        android:layout_width="399dp"
-        android:layout_height="242dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="412dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.375"
-        app:srcCompat="@drawable/assemblage3" />
+            <ImageView
+                android:id="@+id/img_ass1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="TODO"
+                app:srcCompat="@drawable/assemblage1" />
+
+            <ImageView
+                android:id="@+id/img_ass2"
+                android:layout_width="match_parent"
+                android:layout_height="175dp"
+                android:contentDescription="TODO"
+                app:srcCompat="@drawable/assemblage2" />
+
+            <ImageView
+                android:id="@+id/img_ass3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/assemblage3" />
+
+        </LinearLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">GraineDeCopeauxMobile</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Play</string>
+    <string name="title_profil">Profil</string>
     <string name="graine_de_copeaux">Graine de Copeaux</string>
     <string name="your_data_will_be_displayed_here">Your Data will be Displayed here</string>
     <string name="fetch_data">Fetch Data</string>
@@ -13,4 +17,8 @@
     <string name ="text_utilisateur">Visiteur</string>
     <string name="text_home_description">Apprendre la menuiserie en s\'amusant !</string>
     <string name="btn_login">Connexion</string>
+    <string name="rang">Rang: </string>
+    <string name="badge">Badge acquis: </string>
+    <string name="img_rang">Rang</string>
+
 </resources>

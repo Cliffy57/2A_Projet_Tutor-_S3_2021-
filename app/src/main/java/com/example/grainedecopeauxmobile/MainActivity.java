@@ -231,8 +231,46 @@ public class MainActivity extends AppCompatActivity {
     {
         ProfilFragment.score = ProfilFragment.score -100;
     }
-
-
+    public void onClickAssemblage(View view){
+        ConstraintLayout current_fragment=findViewById(R.id.fragment_cours);
+        current_fragment.removeAllViews();
+        Fragment fragment=new Fragment(R.layout.fragment_c_assemblage);
+        FragmentManager fragmentManager= this.getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_cours,fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
+    public void onClickCalepinage(View view){
+        ConstraintLayout current_fragment=findViewById(R.id.fragment_cours);
+        current_fragment.removeAllViews();
+        Fragment fragment=new Fragment(R.layout.fragment_c_calepinage);
+        FragmentManager fragmentManager= this.getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_cours,fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
+    public void onClickDechets(View view){
+        ConstraintLayout current_fragment=findViewById(R.id.fragment_cours);
+        current_fragment.removeAllViews();
+        Fragment fragment=new Fragment(R.layout.fragment_c_dechets);
+        FragmentManager fragmentManager= this.getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_cours,fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
+    public void onClickRecyclage(View view){
+        ConstraintLayout current_fragment=findViewById(R.id.fragment_cours);
+        current_fragment.removeAllViews();
+        Fragment fragment=new Fragment(R.layout.fragment_c_recyclage);
+        FragmentManager fragmentManager= this.getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_cours,fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
 
 
     private TextView txt_username;
