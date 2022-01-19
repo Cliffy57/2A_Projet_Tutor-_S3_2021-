@@ -37,43 +37,43 @@ public class ProfilFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view,Bundle savedInstanceState)
     {
-        textNomRang= (TextView) getView().findViewById(R.id.textDescritpionRang);
+        textNomRang= (TextView) getView().findViewById(R.id.text_rang);
         imageRang = (ImageView) getView().findViewById(R.id.img_rang);
         textNomBadge = (TextView) getView().findViewById(R.id.textDescritpionBadge);
         textNomBadge.setText("Aucun");
 
             if (score < 100) {
-                textNomRang.setText("Bleuisaille");
+                textNomRang.setText("Rang:Bleuisaille");
                 imageRang.setImageResource(R.drawable.rank_bleuisaille);
             }
                 // imgView.set
             else if (score <200){
-                textNomRang.setText("Noob");
+                textNomRang.setText("Rang:Noob");
                  imageRang.setImageResource(R.drawable.rank_noob);}
             else if (score <300){
-                textNomRang.setText("Narvalo");
+                textNomRang.setText("Rang:Narvalo");
                 imageRang.setImageResource(R.drawable.rank_narvalo);}
             else if (score <400) {
-        textNomRang.setText("Bûcheron");
+        textNomRang.setText("Rang:Bûcheron");
         imageRang.setImageResource(R.drawable.rank_bucheron);
     }
             else if (score <500){
-                textNomRang.setText("Boiseux");
+                textNomRang.setText("Rang:Boiseux");
                 imageRang.setImageResource(R.drawable.rank_boiseux);}
             else if (score <600){
-                textNomRang.setText("Bec");
+                textNomRang.setText("Rang:Bec");
                 imageRang.setImageResource(R.drawable.rank_bec);}
             else if (score <700){
-                textNomRang.setText("Bois");
+                textNomRang.setText("Rang:Bois");
                 imageRang.setImageResource(R.drawable.rank_bois);}
             else if (score <800){
-                textNomRang.setText("Bob le bricoleur");
+                textNomRang.setText("Rang:Bob le bricoleur");
                 imageRang.setImageResource(R.drawable.rank_bob_le_bricoleur);}
             else if (score <900){
-                textNomRang.setText("MacGyver");
+                textNomRang.setText("Rang:MacGyver");
                 imageRang.setImageResource(R.drawable.rank_mac_gyver);}
             else{
-                textNomRang.setText("Boss du game");
+                textNomRang.setText("Rang:Boss du game");
                  imageRang.setImageResource(R.drawable.rank_boss_du_game);
                 textNomBadge.setText("Assiduité");}
     }

@@ -247,7 +247,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickScoreMoins(View view)
     {
-        ProfilFragment.score = ProfilFragment.score -100;
+        if (ProfilFragment.score != 0)
+            ProfilFragment.score = ProfilFragment.score -100;
     }
     public void onClickAssemblage(View view){
         ConstraintLayout current_fragment=findViewById(R.id.fragment_cours);
