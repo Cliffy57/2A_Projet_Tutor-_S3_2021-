@@ -8,22 +8,82 @@
     android:layout_gravity="center"
     android:padding="5dp">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="INSANE MEC"
-        android:textSize="48sp"
-        tools:ignore="MissingConstraints" />
-
-    <pl.droidsonroids.gif.GifImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="209dp"
-        android:src="@drawable/patrick"
+    <Button
+        android:id="@+id/btn_c_assemblage"
+        android:layout_width="180dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="66dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="412dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Assemblage"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_c_calepinage"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingClass,MissingConstraints" />
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/btn_c_calepinage"
+        android:layout_width="180dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="66dp"
+        android:layout_marginBottom="412dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Calepinage"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_c_dechets"
+        android:layout_width="180dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="209dp"
+        android:layout_marginBottom="271dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Déchets"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_c_recyclage"
+        android:layout_width="180dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="209dp"
+        android:layout_marginBottom="271dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Recyclage"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/texte_intro_cours"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="545dp"
+        android:autoText="false"
+        android:capitalize="none"
+        android:fontFamily="@font/poppins_medium"
+        android:minHeight="48dp"
+        android:text="Choisissez votre cours :"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
