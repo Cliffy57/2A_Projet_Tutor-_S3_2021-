@@ -10,7 +10,8 @@
         android:id="@+id/textDescritpionBadge"
         android:layout_width="402dp"
         android:layout_height="60dp"
-        android:layout_marginTop="440dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="488dp"
         android:editable="false"
         android:fontFamily="@font/poppins_bold"
         android:textAlignment="center"
@@ -22,7 +23,8 @@
         android:id="@+id/text_badge"
         android:layout_width="402dp"
         android:layout_height="60dp"
-        android:layout_marginTop="380dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="436dp"
         android:fontFamily="@font/poppins_bold"
         android:text="@string/badge"
         android:textAlignment="center"
@@ -32,11 +34,11 @@
 
     <TextView
         android:id="@+id/text_rang"
-        android:layout_width="402dp"
+        android:layout_width="410dp"
         android:layout_height="60dp"
         android:fontFamily="@font/poppins_bold"
         android:textAlignment="center"
-        android:textSize="34sp"
+        android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -44,9 +46,11 @@
         android:id="@+id/img_rang"
         android:layout_width="402dp"
         android:layout_height="322dp"
+        android:layout_marginTop="43dp"
         android:contentDescription="@string/img_rang"
         android:src="@drawable/rank_bleuisaille"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="58dp" />
+        app:layout_constraintTop_toBottomOf="@+id/text_rang" />
 </androidx.constraintlayout.widget.ConstraintLayout>

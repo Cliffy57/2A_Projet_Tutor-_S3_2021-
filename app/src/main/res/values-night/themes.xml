@@ -17,4 +17,5 @@
         <item name="android:colorAccent">@color/white</item>
 
     </style>
+
 </resources>
