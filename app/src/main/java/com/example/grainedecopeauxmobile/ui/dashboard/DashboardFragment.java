@@ -8,18 +8,19 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.grainedecopeauxmobile.R;
 import com.example.grainedecopeauxmobile.databinding.FragmentDashboardBinding;
+import com.example.grainedecopeauxmobile.ui.profil.ProfilFragment;
 
 public class DashboardFragment extends Fragment {
     private Button boutonPlus;
     private Button boutonMoins;
     private DashboardViewModel dashboardViewModel;
     private FragmentDashboardBinding binding;
+    public static TextView textScore;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -32,6 +33,15 @@ public class DashboardFragment extends Fragment {
 
        
         return root;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view,Bundle savedInstanceState)
+    {
+        textScore = (TextView)  getView().findViewById(R.id.text_score);
+        DashboardFragment.textScore.setText("Score:\n "+ ProfilFragment.score);
+
+
     }
 
 

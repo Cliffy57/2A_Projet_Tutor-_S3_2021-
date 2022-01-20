@@ -9,13 +9,13 @@
 
     <TextView
         android:id="@+id/text_score"
-        android:layout_width="140dp"
-        android:layout_height="85dp"
+        android:layout_width="406dp"
+        android:layout_height="145dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:fontFamily="@font/poppins_bold"
-        android:text="Score"
+        android:text=""
         android:textAlignment="center"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -24,36 +24,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.054" />
-
-    <Button
-        android:id="@+id/button_score_moins"
-        android:layout_width="100dp"
-        android:layout_height="120dp"
-        android:layout_marginStart="153dp"
-        android:layout_marginTop="24dp"
-        android:checkable="true"
-        android:fontFamily="@font/poppins_medium"
-        android:onClick="onClickScoreMoins"
-        android:text="-"
-        android:textColor="#455A64"
-        android:textSize="34sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button_score_plus"
-        android:layout_width="100dp"
-        android:layout_height="120dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="24dp"
-        android:checkable="true"
-        android:fontFamily="@font/poppins_medium"
-        android:onClick="onClickScorePlus"
-        android:text="+"
-        android:textColor="#455A64"
-        android:textSize="34sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button_qcm"

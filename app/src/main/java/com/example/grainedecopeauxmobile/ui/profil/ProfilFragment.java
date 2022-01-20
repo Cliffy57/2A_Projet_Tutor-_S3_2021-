@@ -23,6 +23,7 @@ public class ProfilFragment extends Fragment {
     private ImageView imageRang;
     private TextView textNomBadge;
 
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         profilViewModel =
@@ -37,6 +38,7 @@ public class ProfilFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view,Bundle savedInstanceState)
     {
+
         textNomRang= (TextView) getView().findViewById(R.id.text_rang);
         imageRang = (ImageView) getView().findViewById(R.id.img_rang);
         textNomBadge = (TextView) getView().findViewById(R.id.textDescritpionBadge);

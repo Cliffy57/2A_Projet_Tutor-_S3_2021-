@@ -16,8 +16,6 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
@@ -221,6 +219,8 @@ public class MainActivity extends AppCompatActivity {
             else{
                 reponseVrai.setBackgroundResource(R.color.greenPastel);
                 radioButtonSelect.setBackgroundResource(R.color.red);
+                if (ProfilFragment.score !=0)
+                ProfilFragment.score = ProfilFragment.score -50;
             }
         }
 
@@ -241,15 +241,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void onClickScorePlus(View view) {
-        ProfilFragment.score= ProfilFragment.score +100;
-    }
+    /*public void onClickScorePlus(View view) {
 
-    public void onClickScoreMoins(View view)
+        ProfilFragment.score= ProfilFragment.score +100;
+        DashboardFragment.textScore.setText("Score:\n "+ ProfilFragment.score);
+    }*/
+
+   /* public void onClickScoreMoins(View view)
     {
         if (ProfilFragment.score != 0)
+        {
             ProfilFragment.score = ProfilFragment.score -100;
-    }
+            DashboardFragment.textScore.setText("Score:\n "+ ProfilFragment.score);
+
+        }
+    }*/
     public void onClickAssemblage(View view){
         ConstraintLayout current_fragment=findViewById(R.id.fragment_cours);
         current_fragment.removeAllViews();
