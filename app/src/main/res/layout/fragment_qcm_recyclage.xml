@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/fragment_qcm_ex">
+
+    <TextView
+        android:id="@+id/textQCmQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/recyclage_question"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.12" />
+
+    <ImageView
+        android:id="@+id/imageViewQcm"
+        android:layout_width="132dp"
+        android:layout_height="123dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.216"
+        app:srcCompat="@android:drawable/ic_menu_gallery" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupQcm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.585"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp">
+
+        <RadioButton
+            android:id="@+id/Reponse1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/reponseRecyclage1"
+            android:background="@color/greenLime"/>
+
+        <RadioButton
+            android:id="@+id/Reponse2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/reponseRecyclage2"
+            android:background="@color/greenLime"/>
+
+        <RadioButton
+            android:id="@+id/Reponse3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/reponseRecyclage3"
+            android:background="@color/greenLime"/>
+
+        <RadioButton
+            android:id="@+id/Reponse4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/reponseRecyclage4"
+            android:background="@color/greenLime"/>
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnValider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/valider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.818"
+        android:onClick="onClickValiderQcm"/>
+
+    <Button
+        android:id="@+id/btnRetour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/retour"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.974"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.028"
+        android:onClick="onClickQCMReturn"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

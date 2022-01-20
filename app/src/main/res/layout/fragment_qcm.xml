@@ -24,22 +24,22 @@
             android:minHeight="100dp">
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/qcmAssemblage"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="3dp"
                 android:layout_weight="0.5"
-                android:text="QCM1"
-                android:onClick="onClickQCMTest"/>
+                android:text="@string/qcm_assemblage"
+                android:onClick="onClickQCMAssemblage"/>
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/qcmCalepinage"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="3dp"
                 android:layout_weight="0.5"
-                android:text="QCM2"
-                android:onClick="onClickPDF"/>
+                android:text="@string/qcm_calepinage"
+                android:onClick="onClickQCMCalepinage"/>
 
         </TableRow>
 
@@ -50,20 +50,22 @@
             android:minHeight="100dp">
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/qcmDechet"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="3dp"
                 android:layout_weight="0.5"
-                android:text="QCM3" />
+                android:text="@string/qcm_d_chet"
+                android:onClick="onClickQCMDechet"/>
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/qcmRecyclage"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="3dp"
                 android:layout_weight="0.5"
-                android:text="QCM4" />
+                android:text="@string/qcm_recyclage"
+                android:onClick="onCLickQCMRecyclage"/>
 
         </TableRow>
 

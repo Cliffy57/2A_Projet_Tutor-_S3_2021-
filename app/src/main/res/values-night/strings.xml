@@ -20,5 +20,9 @@
     <string name="rang">Rang: </string>
     <string name="badge">Badge acquis: </string>
     <string name="img_rang">Rang</string>
+    <string name="qcm_assemblage">QCM Assemblage</string>
+    <string name="qcm_calepinage">Qcm Calepinage</string>
+    <string name="qcm_d_chet">QCM Déchet</string>
+    <string name="qcm_recyclage">QCM Recyclage</string>
 
 </resources>

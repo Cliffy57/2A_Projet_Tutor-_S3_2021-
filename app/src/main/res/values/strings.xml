@@ -19,6 +19,31 @@
     <string name="rang">Rang: </string>
     <string name="badge">Badge acquis: </string>
     <string name="img_rang">Rang</string>
-
+    <string name="assemblage_question">Quel méthode d\'assemblage n\'existe pas ?</string>
+    <string name="reponseAssemblage1">Assemblage à fourchette</string>
+    <string name="reponseAssemblage2">Assemblage à Mi-bois</string>
+    <string name="reponseAssemblage3">Assemblage en sifflet</string>
+    <string name="reponseAssemblage4">Assemblage en doigts de gant</string>
+    <string name="valider">Valider</string>
+    <string name="retour">retour</string>
+    <string name="dechet_question">La colle est un déchet :</string>
+    <string name="reponseDechet1">inerte</string>
+    <string name="reponseDechet2">recyclabe</string>
+    <string name="reponseDechet3">dangeureux</string>
+    <string name="reponseDechet4">propre</string>
+    <string name="recyclage_question">Combien de bennes différentes le lycée utilise-t\'il ?</string>
+    <string name="reponseRecyclage1">5</string>
+    <string name="reponseRecyclage2">4</string>
+    <string name="reponseRecyclage3">6</string>
+    <string name="reponseRecyclage4">21</string>
+    <string name="calepinage_question">Comment faire un calepinage ?</string>
+    <string name="reponseCalepinage1">On place en premier les pièces les plus longues ?</string>
+    <string name="reponseCalepinage2">On place en dernier les pièces les plus longues ?</string>
+    <string name="reponseCalepinage3">On ne fait pas attention à l\'épaisseur.</string>
+    <string name="reponseCalepinage4">On place les pièces comme on veut</string>
+    <string name="qcm_assemblage">QCM Assemblage</string>
+    <string name="qcm_calepinage">Qcm Calepinage</string>
+    <string name="qcm_d_chet">QCM Déchet</string>
+    <string name="qcm_recyclage">QCM Recyclage</string>
 
 </resources>

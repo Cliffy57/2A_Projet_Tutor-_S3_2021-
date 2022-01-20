@@ -12,7 +12,6 @@
         android:id="@+id/btn_c_assemblage"
         android:layout_width="180dp"
         android:layout_height="120dp"
-        android:layout_marginStart="5dp"
         android:layout_marginTop="66dp"
         android:layout_marginEnd="19dp"
         android:layout_marginBottom="412dp"
@@ -21,8 +20,8 @@
         android:text="Assemblage"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btn_c_calepinage"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.069"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
@@ -31,7 +30,6 @@
         android:id="@+id/btn_c_calepinage"
         android:layout_width="180dp"
         android:layout_height="120dp"
-        android:layout_marginStart="200dp"
         android:layout_marginTop="66dp"
         android:layout_marginBottom="412dp"
         android:fontFamily="@font/poppins_medium"
@@ -39,14 +37,16 @@
         android:text="Calepinage"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.96"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/btn_c_dechets"
         android:layout_width="180dp"
         android:layout_height="120dp"
-        android:layout_marginStart="5dp"
         android:layout_marginTop="209dp"
         android:layout_marginBottom="271dp"
         android:fontFamily="@font/poppins_medium"
@@ -54,14 +54,16 @@
         android:text="Déchets"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.069"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/btn_c_recyclage"
         android:layout_width="180dp"
         android:layout_height="120dp"
-        android:layout_marginStart="200dp"
         android:layout_marginTop="209dp"
         android:layout_marginBottom="271dp"
         android:fontFamily="@font/poppins_medium"
@@ -69,8 +71,11 @@
         android:text="Recyclage"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.96"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/texte_intro_cours"

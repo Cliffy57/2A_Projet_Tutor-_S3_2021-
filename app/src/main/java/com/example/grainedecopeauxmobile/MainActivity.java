@@ -1,5 +1,6 @@
 package com.example.grainedecopeauxmobile;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
@@ -10,6 +11,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -48,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
     //private int score = 0 ;
     Dialog dialog;
+    private RadioButton radioButtonSelect;
 
 
 
@@ -197,17 +201,24 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.commit();
     }
 
-    public void onClickQCMTest(View view) {
-        ConstraintLayout current_fragment = findViewById(R.id.fragment_qcm);
-//      current_fragment.setVisibility(View.GONE);
-        current_fragment.removeAllViews();
-        Fragment fragment = new Fragment(R.layout.fragment_qcm_exemple);
-        FragmentManager fragmentManager = this.getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.fragment_qcm, fragment);
-        fragmentTransaction.addToBackStack(null);
-        fragmentTransaction.commit();
+    @SuppressLint("ResourceAsColor")
+    public void onClickValiderQcm(View view){
+        RadioGroup radioGroup = findViewById(R.id.radioGroupQcm);
+        RadioButton reponseVrai = findViewById(R.id.Reponse1);
+        int radioButtonID = radioGroup.getCheckedRadioButtonId();
+        View radioButton = radioGroup.findViewById(radioButtonID);
+        int idx = radioGroup.indexOfChild(radioButton);
+        radioButtonSelect = (RadioButton) radioGroup.getChildAt(idx);
+        if(radioGroup.getCheckedRadioButtonId() == reponseVrai.getId())
+        {
+            reponseVrai.setBackgroundResource(R.color.greenPastel);
+            ProfilFragment.score = ProfilFragment.score + 50;
 
+        }
+        else{
+            reponseVrai.setBackgroundResource(R.color.greenPastel);
+            radioButtonSelect.setBackgroundResource(R.color.red);
+        }
     }
 
     public void onClickQCMReturn(View view) {
@@ -270,6 +281,54 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.replace(R.id.fragment_cours,fragment);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
+    }
+
+    public void onClickQCMAssemblage(View view) {
+        ConstraintLayout current_fragment = findViewById(R.id.fragment_qcm);
+        current_fragment.removeAllViews();
+        Fragment fragment = new Fragment(R.layout.fragment_qcm_assemblage);
+        FragmentManager fragmentManager = this.getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_qcm, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+
+    }
+
+    public void onClickQCMCalepinage(View view) {
+        ConstraintLayout current_fragment = findViewById(R.id.fragment_qcm);
+        current_fragment.removeAllViews();
+        Fragment fragment = new Fragment(R.layout.fragment_qcm_calepinage);
+        FragmentManager fragmentManager = this.getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_qcm, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+
+    }
+
+    public void onClickQCMDechet(View view) {
+        ConstraintLayout current_fragment = findViewById(R.id.fragment_qcm);
+        current_fragment.removeAllViews();
+        Fragment fragment = new Fragment(R.layout.fragment_qcm_dechet);
+        FragmentManager fragmentManager = this.getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_qcm, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+
+    }
+
+    public void onCLickQCMRecyclage(View view) {
+        ConstraintLayout current_fragment = findViewById(R.id.fragment_qcm);
+        current_fragment.removeAllViews();
+        Fragment fragment = new Fragment(R.layout.fragment_qcm_recyclage);
+        FragmentManager fragmentManager = this.getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_qcm, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+
     }
 
 
