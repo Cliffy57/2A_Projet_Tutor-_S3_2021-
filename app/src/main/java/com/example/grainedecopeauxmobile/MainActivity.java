@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
     //private int score = 0 ;
     Dialog dialog;
     private RadioButton radioButtonSelect;
+    boolean questionRepondu = false;
 
 
 
@@ -203,22 +204,27 @@ public class MainActivity extends AppCompatActivity {
 
     @SuppressLint("ResourceAsColor")
     public void onClickValiderQcm(View view){
+
         RadioGroup radioGroup = findViewById(R.id.radioGroupQcm);
         RadioButton reponseVrai = findViewById(R.id.Reponse1);
         int radioButtonID = radioGroup.getCheckedRadioButtonId();
         View radioButton = radioGroup.findViewById(radioButtonID);
         int idx = radioGroup.indexOfChild(radioButton);
         radioButtonSelect = (RadioButton) radioGroup.getChildAt(idx);
-        if(radioGroup.getCheckedRadioButtonId() == reponseVrai.getId())
-        {
-            reponseVrai.setBackgroundResource(R.color.greenPastel);
-            ProfilFragment.score = ProfilFragment.score + 50;
+        if (!questionRepondu){
+            if(radioGroup.getCheckedRadioButtonId() == reponseVrai.getId())
+            {
+                reponseVrai.setBackgroundResource(R.color.greenPastel);
+                ProfilFragment.score = ProfilFragment.score + 50;
 
+            }
+            else{
+                reponseVrai.setBackgroundResource(R.color.greenPastel);
+                radioButtonSelect.setBackgroundResource(R.color.red);
+            }
         }
-        else{
-            reponseVrai.setBackgroundResource(R.color.greenPastel);
-            radioButtonSelect.setBackgroundResource(R.color.red);
-        }
+
+        questionRepondu = true;
     }
 
     public void onClickQCMReturn(View view) {
@@ -230,6 +236,7 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.fragment_qcm_ex, fragment);
         fragmentTransaction.addToBackStack(null);
+        questionRepondu = false;
         fragmentTransaction.commit();
     }
 
