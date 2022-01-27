@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
     //private int score = 0 ;
     Dialog dialog;
     private RadioButton radioButtonSelect;
-    boolean questionRepondu = false;
+    boolean questionRepondu;
 
 
 

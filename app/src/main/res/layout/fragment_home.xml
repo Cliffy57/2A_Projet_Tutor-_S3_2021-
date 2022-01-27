@@ -10,12 +10,13 @@
         android:id="@+id/button_login"
         android:layout_width="48dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="320dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/ic_baseline_login_24"
         android:fontFamily="@font/poppins_medium"
         android:onClick="OnclickLogin"
         android:textColor="#4E342E"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.909"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="SpeakableTextPresentCheck" />
@@ -54,7 +55,7 @@
         app:layout_constraintHorizontal_bias="0.54"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.333" />
+        app:layout_constraintVertical_bias="0.333"/>
 
     <TextView
         android:id="@+id/text_home_description"
@@ -102,10 +103,11 @@
         android:id="@+id/button_instagram"
         android:layout_width="93dp"
         android:layout_height="96dp"
-        android:layout_marginStart="284dp"
-        android:layout_marginTop="360dp"
+        android:layout_marginTop="364dp"
         android:background="@mipmap/ic_instagram"
         android:onClick="onClickInstagram"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.949"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="SpeakableTextPresentCheck" />

@@ -8,29 +8,38 @@
 
     <TextView
         android:id="@+id/textDescritpionBadge"
-        android:layout_width="402dp"
-        android:layout_height="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="488dp"
+        android:layout_marginTop="415dp"
+        android:layout_marginBottom="55dp"
         android:editable="false"
         android:fontFamily="@font/poppins_bold"
         android:textAlignment="center"
         android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.002"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/text_badge"
-        android:layout_width="402dp"
-        android:layout_height="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="436dp"
+        android:layout_marginTop="345dp"
         android:fontFamily="@font/poppins_bold"
         android:text="@string/badge"
         android:textAlignment="center"
         android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/textDescritpionBadge"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/text_rang"
@@ -39,18 +48,23 @@
         android:fontFamily="@font/poppins_bold"
         android:textAlignment="center"
         android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/img_rang"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2" />
 
     <ImageView
         android:id="@+id/img_rang"
-        android:layout_width="402dp"
-        android:layout_height="322dp"
-        android:layout_marginTop="43dp"
+        android:layout_width="412dp"
+        android:layout_height="254dp"
         android:contentDescription="@string/img_rang"
         android:src="@drawable/rank_bleuisaille"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_rang" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.241" />
 </androidx.constraintlayout.widget.ConstraintLayout>
