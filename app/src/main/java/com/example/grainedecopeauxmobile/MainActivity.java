@@ -39,7 +39,7 @@ import java.sql.Statement;
 
 public class MainActivity extends AppCompatActivity {
 
-
+//  Parametres de la bdd a securiser a travers differentes methodes...
     private static final String url = "jdbc:mysql://clgu6252.odns.fr:3306/clgu6252_wp571";
     private static final String user = "clgu6252_groupe_2";
     private static final String pass = ")$OYuZSjUo8R";
@@ -100,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
     ImageView imageView;
+//  Action lorsque l'on clique sur le bouton de connexion
     public void OnclickLogin(View view){
         Dialog dialog=new Dialog(this);
         dialog.setContentView(R.layout.fragment_login);
@@ -116,14 +117,14 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-
+//  Action lorsque l'on clique sur le bouton du site internet
     public void onClickG2C(View view) {
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_VIEW);
         intent.setData(Uri.parse("https://www.grainedecopeaux.com/"));
         startActivity(intent);
     }
-
+//  Action lorsque l'on clique sur le bouton instagram qui redirige vers G2C
     public void onClickInstagramG2C(View view) {
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_VIEW);
@@ -131,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
-
+//  Action lorsque l'on clique sur le bouton youtube
     public void onClickYoutubeG2C(View view) {
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_VIEW);
@@ -140,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-
+//  Action lorsque l'on clique sur le bouton cours
     public void onClickCours(View view) {
         ConstraintLayout current_fragment = findViewById(R.id.fragment_dashboard);
 //        current_fragment.setVisibility(View.GONE);
@@ -163,18 +164,21 @@ public class MainActivity extends AppCompatActivity {
 //        FragmentTransaction transaction= getSupportFragmentManager().beginTransaction();
 //       transaction.replace(R.id.fragment_dashboard,new fragmentCours()).commit();
 
+//  Action lorsque l'on clique sur le bouton du magasin
     public void onClickShop(View view) {
         Uri uri = Uri.parse("https://www.grainedecopeaux.com/boutique/"); // missing 'http://' will cause crashed
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         startActivity(intent);
     }
+//  Action lorsque l'on clique sur le bouton youtube
     public void onClickYtb(View view) {
         startActivity(new Intent(Intent.ACTION_VIEW,   Uri.parse("https://www.youtube.com/channel/UC_TVzMGljJUHlhLG0dpXqdg")));
     }
+//  Action lorsque l'on clique sur le bouton instagram
     public void onClickInstagram(View view) {
         startActivity(new Intent(Intent.ACTION_VIEW,   Uri.parse("https://www.instagram.com/grainedecopeaux/?hl=fr")));
     }
-
+//  Action lorsque l'on clique sur le bouton des QCM
     public void onClickQCM(View view) {
         ConstraintLayout current_fragment = findViewById(R.id.fragment_dashboard);
 //      current_fragment.setVisibility(View.GONE);
@@ -187,7 +191,7 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.commit();
 
     }
-
+//  Action lorsque l'on clique sur le bouton afin d'ouvrir un pdf
     public void onClickPDF(View view) {
         ConstraintLayout current_fragment = findViewById(R.id.fragment_qcm);
 //      current_fragment.setVisibility(View.GONE);
@@ -256,6 +260,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }*/
+//  Toutes les actions lorsque l'on appuie sur un bouton ce trouve ici
     public void onClickAssemblage(View view){
         ConstraintLayout current_fragment=findViewById(R.id.fragment_cours);
         current_fragment.removeAllViews();
@@ -376,7 +381,7 @@ public class MainActivity extends AppCompatActivity {
                     .show();
 
         }
-
+//     doInBackGround permet de faire les transactions back-end de l'appli que l'utilisateur ne voit pas
         @Override
         protected String doInBackground(String... params) {
             try {
