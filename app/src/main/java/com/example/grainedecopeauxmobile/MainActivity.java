@@ -47,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
     ImageView imgView ;
     TextView txtData;
     private ActivityMainBinding binding;
-    //private int score = 0 ;
     Dialog dialog;
     private RadioButton radioButtonSelect;
     boolean questionRepondu = false;
@@ -61,35 +60,12 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-//        txtData = (TextView) this.findViewById(R.id.txtData);
-//        btnFetch = (Button) findViewById(R.id.btnFetch);
-//        btnClear = (Button) findViewById(R.id.btnClear);
-//        btnFetch.setOnClickListener(new View.OnClickListener() {
-//
-//            @Override
-//            public void onClick(View v) {
-//                // TODO Auto-generated method stub
-//                ConnectMySql connectMySql = new ConnectMySql();
-//                connectMySql.execute("");
-//            }
-//        });
-//        btnClear.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                txtData.setText("");
-//            }
-//        });
-
-
-
-
-
 
 
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
+        //Passer chaque ID de menu comme un ensemble d'ID 
+        // le menu doit être considéré comme une destination de premier niveau.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_profil)
                 .build();
@@ -155,15 +131,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
-
-
-        //        NavController navController = Navigation.findNavController(this,R.id.fragment_cours);
-        //        navController.navigate(R.id.fragment_dashboard);
-
-//        FragmentTransaction transaction= getSupportFragmentManager().beginTransaction();
-//       transaction.replace(R.id.fragment_dashboard,new fragmentCours()).commit();
-
 //  Action lorsque l'on clique sur le bouton du magasin
     public void onClickShop(View view) {
         Uri uri = Uri.parse("https://www.grainedecopeaux.com/boutique/"); // missing 'http://' will cause crashed
@@ -181,7 +148,6 @@ public class MainActivity extends AppCompatActivity {
 //  Action lorsque l'on clique sur le bouton des QCM
     public void onClickQCM(View view) {
         ConstraintLayout current_fragment = findViewById(R.id.fragment_dashboard);
-//      current_fragment.setVisibility(View.GONE);
         current_fragment.removeAllViews();
         Fragment fragment = new Fragment(R.layout.fragment_qcm);
         FragmentManager fragmentManager = this.getSupportFragmentManager();
@@ -190,18 +156,6 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
 
-    }
-//  Action lorsque l'on clique sur le bouton afin d'ouvrir un pdf
-    public void onClickPDF(View view) {
-        ConstraintLayout current_fragment = findViewById(R.id.fragment_qcm);
-//      current_fragment.setVisibility(View.GONE);
-        current_fragment.removeAllViews();
-        Fragment fragment = new Fragment(R.layout.fragment_pdf);
-        FragmentManager fragmentManager = this.getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.fragment_qcm, fragment);
-        fragmentTransaction.addToBackStack(null);
-        fragmentTransaction.commit();
     }
 
     @SuppressLint("ResourceAsColor")
@@ -233,7 +187,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickQCMReturn(View view) {
         ConstraintLayout current_fragment = findViewById(R.id.fragment_qcm_ex);
-//      current_fragment.setVisibility(View.GONE);
         current_fragment.removeAllViews();
         Fragment fragment = new Fragment(R.layout.fragment_qcm);
         FragmentManager fragmentManager = this.getSupportFragmentManager();
@@ -340,23 +293,11 @@ public class MainActivity extends AppCompatActivity {
     private TextView txt_username;
     private TextView txt_password;
     private Button btn_login;
-    public void onClickConnexion(View view) {
-
-//        String inputUsername = txt_username.getText().toString();
-//        String inputPassword = txt_password.getText().toString();
-//        if(inputUsername.isEmpty() || inputPassword.isEmpty()){
-//            Toast.makeText(this,"Specifier les informations de connexions.",Toast.LENGTH_SHORT).show();
-        //}else{
-        //FAIRE CONNEXION
-        //}
-
-
-    }
+   
 
 
 
-
-
+     //Permet de ce connecter à la base de données sur un serveur en ligne
     private class ConnectMySql extends AsyncTask<String, Void, String> {
         String res = "";
 
