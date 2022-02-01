@@ -2,8 +2,12 @@ LISEZ MOI :
 Memento – Projet Application mobile Android Graine de Copeaux – Jeudi 27 janvier 2022
 
 Intervenants du projet : CREMON Damien, DI PAOLO Hugo, DI TULLIO Louis et WOILLARD Éric 
-Pour télécharger Android Studio : https://developer.android.com/studio
-Activer la virtualisation, essentielle pour l’émulation du téléphone sous Android Studio : https://www.youtube.com/watch?v=pzrrxsdiIWU
+Pour télécharger Android Studio :
+https://developer.android.com/studio
+Activer la virtualisation, essentielle pour l’émulation du téléphone sous Android Studio : 
+https://www.youtube.com/watch?v=pzrrxsdiIWU
+Lancer votre application sur un smartphone android:
+https://developer.android.com/training/basics/firstapp/running-app
 
 Affichage de l’application lorsqu’elle démarre : 
 Pour ouvrir le projet, faire « File – Open » et sélectionner le bon dossier. 
@@ -13,7 +17,7 @@ A gauche, les différents dossiers importants de l’application apparaissent, e
 
 
 
-
+Les différents dossiers de l'application : 
 Java - MainActivity -> Fichier .java du projet qui est l’activité principale du projet (liens entre les pages et connexion BdD MySQL)
 Java - ConnectMySql -> Connexion de la BdD G2C à l’application, là aussi où il faut mettre toutes les requêtes SQL pour récupérer les données)
 Res – drawable -> Toutes les images utilisées pour le projet en PNG ou XML
@@ -27,11 +31,14 @@ Values - Strings -> Toutes les variables utilisées dans le projet déclarées i
 Themes -> themes.xml pour tous les thèmes utilisés dans le projet, 2 fichiers présents, un pour le mode jour et un pour le mode nuit
 Gradle Scripts – build.gradle -> Implémentations de scripts pour faire fonctionner l’appli 
 
-Pour afficher les pages du projet, il faut double-cliquer sur les fragments.
+Le code en java doit être dans le dossier java.
 
-A ce moment-là, vous pouvez sélectionner 3 modes en haut à droite de l’application qui sont « Code » où on voit uniquement le Code utilisé de la page, « Split » où on voit le code et l’interface réalisé grâce à celui-ci, et « design » où on voit l’interface et à gauche toutes les options possibles pour en IHM.  
+Pour afficher et modifier l'affichage des différentes pages de l'application, il faut double-cliquer sur les fragments. (Trouvable dans le dossier Layout).
 
-Pour compiler et lancer le programme global il faut cliquer sur la flèche verte en haut de l’écran.
+A ce moment-là, vous pouvez sélectionner 3 modes en haut à droite de l’application qui sont « Code » où on voit uniquement le fichier XML utilisé de la page, « Split » où on voit le code XML et l’interface réalisé grâce à celui-ci, et « design » qui permet d'ajouter des éléments et de les modifier sans avoir besoin d'écrire le code.  
+ 
+Pour compiler et lancer le programme global il faut cliquer sur la flèche verte en haut de l’écran.   
+
 
 Amelioration possible de l'appli :
 
