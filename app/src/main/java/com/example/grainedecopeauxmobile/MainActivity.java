@@ -245,21 +245,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    /*public void onClickScorePlus(View view) {
-
-        ProfilFragment.score= ProfilFragment.score +100;
-        DashboardFragment.textScore.setText("Score:\n "+ ProfilFragment.score);
-    }*/
-
-   /* public void onClickScoreMoins(View view)
-    {
-        if (ProfilFragment.score != 0)
-        {
-            ProfilFragment.score = ProfilFragment.score -100;
-            DashboardFragment.textScore.setText("Score:\n "+ ProfilFragment.score);
-
-        }
-    }*/
+   
 //  Toutes les actions lorsque l'on appuie sur un bouton ce trouve ici
     public void onClickAssemblage(View view){
         ConstraintLayout current_fragment=findViewById(R.id.fragment_cours);
