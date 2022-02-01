@@ -16,7 +16,7 @@ import com.example.grainedecopeauxmobile.databinding.FragmentProfilBinding;
 
 public class ProfilFragment extends Fragment {
 
-    public static int score =0;
+    public static int score =0; // on creer une variable score qui pourra etre modifier 
     private NotificationsViewModel profilViewModel;
     private FragmentProfilBinding binding;
     private TextView textNomRang;
@@ -44,7 +44,7 @@ public class ProfilFragment extends Fragment {
         textNomBadge = (TextView) getView().findViewById(R.id.textDescritpionBadge);
         textNomBadge.setText("Aucun");
 
-            if (score < 100) {
+            if (score < 100) {// en fonction du score on change le nom du rang et son image
                 textNomRang.setText("Rang:Bleuisaille");
                 imageRang.setImageResource(R.drawable.rank_bleuisaille);
             }
