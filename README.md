@@ -52,6 +52,7 @@ Amélioration possible de l'appli :-développement d'une base de données en MyS
 -Développer un PDF Viewer 
 
 
-![Screenshot_1642026910](https://user-images.githubusercontent.com/73029436/154969353-88b80e93-aedb-48b7-a95b-92e40cf0f7fb.png)
+![Screenshot_1645452114](https://user-images.githubusercontent.com/73029436/154969818-5b7cec0a-983f-4364-82db-3f840b6f3f7e.png)
 
+![Screenshot_1642026914](https://user-images.githubusercontent.com/73029436/154969833-9b9b5307-069f-4abc-ac74-98bc630346eb.png)
 
